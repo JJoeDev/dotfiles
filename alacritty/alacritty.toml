@@ -1,0 +1,67 @@
+live_config_reload = true
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#444B6A"
+blue = "#7DA6FF"
+cyan = "#0DB9D7"
+green = "#B9F27C"
+magenta = "#BB9AF7"
+red = "#FF7A93"
+white = "#ACB0D0"
+yellow = "#FF9E64"
+
+[colors.normal]
+black = "#32344A"
+blue = "#7AA2F7"
+cyan = "#449DAB"
+green = "#9ECE6A"
+magenta = "#AD8EE6"
+red = "#F7768E"
+white = "#787C99"
+yellow = "#E0AF68"
+
+[colors.primary]
+background = "#11121D"
+foreground = "#A9B1D6"
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+
+[font]
+size = 10
+
+[font.bold]
+family = "Jetbrains Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "Jetbrains Mono"
+style = "BoldItalic"
+
+[font.normal]
+family = "Jetbrains Mono"
+style = "Medium"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = false
+
+[shell]
+program = "/usr/bin/fish"
+
+[window]
+opacity = 1
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 5
+y = 5

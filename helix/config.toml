@@ -1,0 +1,28 @@
+theme = "sonokai"
+
+[editor]
+line-number = "relative"
+mouse = false
+color-modes = true
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "file-modification-indicator", "spinner"]
+center = ["file-name", "read-only-indicator"]
+right = ["position", "separator", "total-line-numbers", "separator", "file-type"]
+separator = "|"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.indent-guides]
+render = true
+character = "┆"
+skip-levels = 1

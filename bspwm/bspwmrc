@@ -1,0 +1,35 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor HDMI-1 -d 1 2 3 4 5
+bspc monitor HDMI-0 -d 6 7 8 9 0
+
+bspc config border_width         1
+bspc config window_gap           2
+
+bspc config split_ratio           0.5
+bspc config auto_alternate		  true
+bspc config borderless_monocle    true
+bspc config gapless_monocle       true
+#  bspc config pointer_follows_focus true
+
+#bspc config top_padding 32 # Override default padding added to polybar
+
+bspc config active_border_color "#000000"
+bspc config normal_border_color "#000000"
+bspc config focused_border_color "#66B3FF"
+
+# Window Start Desktops (use xprop and click window to see WM_CLASS)
+bspc rule -a Spotify desktop=^2
+bspc rule -a discord desktop=^1
+
+#
+# AUTO LAUNCH
+#
+
+# xrandr --output HDMI-0 --scale 1920x1080 --rate 144 &
+# xrandr --output HDMI-1 --scale 1920x1080 --rate 75 &
+feh --bg-scale --randomize ~/Pictures/Wallpapers/* &
+copyq &
+~/.config/polybar/autolaunch.sh &
