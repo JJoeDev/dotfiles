@@ -1,28 +1,38 @@
 theme = "sonokai"
 
 [editor]
+bufferline = "multiple" # Show buffers when more than one is open
+cursorline = true # Highlight the line where the cursor is
 line-number = "relative"
+# rulers = [120] # Highlight the 120 char width
+true-color = true # Force the theme to show colors
+color-modes = true # Colors for INSERT NORMAL & SELECT
 mouse = false
-color-modes = true
-
-[editor.lsp]
-display-inlay-hints = true
 
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
 
+[editor.indent-guides]
+character = "╎"
+render = true
+skip-levels = 1
+
+[editor.lsp]
+display-messages = true # Show LSP messages in statusline
+
 [editor.statusline]
-left = ["mode", "file-modification-indicator", "spinner"]
+# left = ["mode", "spinner", "version-control", "file-name"]
+left = ["mode", "version-control", "file-modification-indicator", "spinner"]
 center = ["file-name", "read-only-indicator"]
 right = ["position", "separator", "total-line-numbers", "separator", "file-type"]
-separator = "|"
+separator = "//"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
 
-[editor.indent-guides]
-render = true
-character = "┆"
-skip-levels = 1
+[keys.normal]
+"A-," = "goto_previous_buffer"
+"A-." = "goto_next_buffer"
+"A-w" = ":buffer-close"

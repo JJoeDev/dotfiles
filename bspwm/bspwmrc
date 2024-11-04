@@ -6,30 +6,31 @@ bspc monitor HDMI-1 -d 1 2 3 4 5
 bspc monitor HDMI-0 -d 6 7 8 9 0
 
 bspc config border_width         1
-bspc config window_gap           2
+bspc config window_gap           5
 
-bspc config split_ratio           0.5
-bspc config auto_alternate		  true
-bspc config borderless_monocle    true
-bspc config gapless_monocle       true
-#  bspc config pointer_follows_focus true
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config auto_alternate       true
 
-#bspc config top_padding 32 # Override default padding added to polybar
+# ========================================
+#      BSPWM WINDOW DECORATION COLORS
+# ========================================
+bspc config active_border_color "#2C2E34"
+bspc config normal_border_color "#2C2E34"
+bspc config focused_border_color "#F39660"
 
-bspc config active_border_color "#000000"
-bspc config normal_border_color "#000000"
-bspc config focused_border_color "#66B3FF"
+# ===== MOVING FLOATING WINDOWS IN 144 Hz ===== #
+bspc config pointer_motion_interval 7ms
 
-# Window Start Desktops (use xprop and click window to see WM_CLASS)
-bspc rule -a Spotify desktop=^2
-bspc rule -a discord desktop=^1
+# =============================
+#      AUTO START COMMANDS
+# =============================
+setxkbmap dk
+feh --bg-scale --randomize ~/Pictures/wallpapers/* &
 
-#
-# AUTO LAUNCH
-#
+# ===== POLYBAR LAUNCH ===== #
+~/.config/polybar/launch.sh &
 
-# xrandr --output HDMI-0 --scale 1920x1080 --rate 144 &
-# xrandr --output HDMI-1 --scale 1920x1080 --rate 75 &
-feh --bg-scale --randomize ~/Pictures/Wallpapers/* &
-copyq &
-~/.config/polybar/autolaunch.sh &
+bspc rule -a MiBar state=floating
+bspc rule -a MiBar manage=off
